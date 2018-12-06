@@ -17,3 +17,19 @@
     <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
     <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
 </address>
+
+<ul style="border:1px solid;">
+    @foreach (var contacto in ViewData["contactos"] as IList<Model.Contacto>)
+    {
+        <li>
+            <p>@contacto.Nombre</p>
+        </li>
+        <li>
+            <p>@contacto.Telefono</p>
+        </li>
+        <li>
+            <p>@contacto.Url</p>
+            <hr style="border-top: 1px solid #8c8b8b;" />
+        </li>        
+    }
+</ul>
