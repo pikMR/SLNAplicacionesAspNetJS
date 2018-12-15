@@ -57,7 +57,19 @@
     </Compile>
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="srcbd\views\about.hbs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="srcbd\views\index.hbs">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="srcbd\views\layouts\main.hbs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="srcbd\views\users\signin.hbs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="srcbd\views\users\signout.hbs">
       <SubType>Code</SubType>
     </Content>
   </ItemGroup>
@@ -70,6 +82,7 @@
     <Folder Include="srcbd\routes\" />
     <Folder Include="srcbd\public\" />
     <Folder Include="srcbd\views\layouts\" />
+    <Folder Include="srcbd\views\users\" />
     <Folder Include="srcbd\views\partials\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->

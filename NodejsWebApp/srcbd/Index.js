@@ -5,7 +5,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 // inicializar
 const app = express();
-
+require('./database');
 // settings
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -29,7 +29,7 @@ app.use(session({
 }));
 
 // variables globales
-
+app.use(express.static(path.join(__dirname,'public')));
 // rutas
 app.use(require('./routes/index'));
 app.use(require('./routes/notes'));
