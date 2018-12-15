@@ -13,7 +13,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>8ccf0b10-a2af-4fb1-a1a8-8861175d95fb</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>serverexpress.js</StartupFile>
+    <StartupFile>srcbd\Index.js</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -40,8 +40,37 @@
     <Compile Include="serverexpress.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="srcbd\database.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="srcbd\Index.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="srcbd\routes\index.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="srcbd\routes\notes.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="srcbd\routes\users.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="srcbd\views\layouts\main.hbs">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="srcbd\" />
+    <Folder Include="srcbd\config\" />
+    <Folder Include="srcbd\helpers\" />
+    <Folder Include="srcbd\models\" />
+    <Folder Include="srcbd\views\" />
+    <Folder Include="srcbd\routes\" />
+    <Folder Include="srcbd\public\" />
+    <Folder Include="srcbd\views\layouts\" />
+    <Folder Include="srcbd\views\partials\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
