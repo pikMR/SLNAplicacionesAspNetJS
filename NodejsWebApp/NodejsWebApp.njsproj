@@ -46,6 +46,9 @@
     <Compile Include="srcbd\database.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="srcbd\helpers\auth.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="srcbd\Index.js">
       <SubType>Code</SubType>
     </Compile>
@@ -91,7 +94,13 @@
     <Content Include="srcbd\views\partials\errors.hbs">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="srcbd\views\partials\footer.hbs">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="srcbd\views\partials\messages.hbs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="srcbd\views\partials\navigation.hbs">
       <SubType>Code</SubType>
     </Content>
     <Content Include="srcbd\views\users\signin.hbs">

@@ -2,9 +2,10 @@
 const router = express.Router();
 const Note = require('../models/Note');
 const moment = require('moment');
+const { isAuthenticated } = require("../helpers/auth");
 
-router.get('/notes', async (req, res) => {
-    const collectionNotes = await Note.find().sort({date:'desc'});
+router.get('/notes',isAuthenticated,async (req, res) => {
+    const collectionNotes = await Note.find({user:req.user.id}).sort({date:'desc'});
     const colNotesMap = collectionNotes.map(e => ({
         id: e._id,
         nombre: e.nombre,
@@ -25,7 +26,7 @@ router.put('/notes/edit-note/:id', async (req, res) => {
 
 // desde formulario all-notes.hbs
 // hacia edit-note 
-router.get('/notes/edit/:id', async (req, res) => {
+router.get('/notes/edit/:id',isAuthenticated, async (req, res) => {
     const _nota = await Note.findById(req.params.id); 
     res.render('notes/edit-note', { _nota });
 });
@@ -41,9 +42,11 @@ router.delete('/notes/delete/:id', async (req, res) => {
 
 // desde formulario 
 // hacia notes/new-note
-router.get('/notes/add', (req, res) => {
+router.get('/notes/add',isAuthenticated,(req, res) => {
     res.render('notes/new-note');
 });
+
+
 
 // desde formulario
 // hacia all-notes.hbs, new-note.hbs
@@ -61,6 +64,7 @@ router.post('/notes/new-note', async (req, res) => {
         res.render('notes/new-note', { errors, nombre, intereses });
     } else {
         const nueva_nota = new Note({ nombre, intereses, correo });
+        nueva_nota.user = req.user.id;
         await nueva_nota.save();
         console.log("new-note -> "+nueva_nota);
         req.flash('success_msg', 'Elemento agregado satisfactoriamente.');

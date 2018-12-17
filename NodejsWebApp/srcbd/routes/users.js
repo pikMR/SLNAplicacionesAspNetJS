@@ -2,6 +2,7 @@
 const router = express.Router();
 const User = require('../models/User');
 const passport = require('passport');
+const { isAuthenticated } = require("../helpers/auth");
 
 router.get('/users/signin', (req, res) => {
     res.render('./users/signin');
@@ -15,6 +16,11 @@ router.post('/users/signin', passport.authenticate('local', {
     failureRedirect: '/users/signin',
     failureFlash:true
 }), (req,res,next) => { console.log("---> siginpost : "+req.body); });
+
+router.get('/users/logout',isAuthenticated,(req,res) => {
+    req.logout();
+    res.redirect('/');
+});
 
 router.post('/users/signup', async (req, res) => {
     const { nombre, email, pass, confirm } = req.body;
