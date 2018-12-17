@@ -1,1 +1,32 @@
-﻿<h1>Login</h1>
+﻿<div class="row">
+    <div class="col-md-4 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                <h1>Acceso</h1>
+            </div>
+            <img src="/img/sofa.png" class="rounded-circle logo mx-auto d-block m-4" alt="Logo" />
+            <div class="card-body">
+                <form class="form-horizontal" role="form" action="/users/signin" method="POST">
+                    <div class="form-group">
+                        <label class="control-label" for="exampleInputEmail">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="exampleInputEmail" placeholder="Email" name="email" autofocus>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="examplePassword">Contraseña</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="exampleInputPassword" placeholder="Contraseña" name="password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary btn-block">Acceder</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

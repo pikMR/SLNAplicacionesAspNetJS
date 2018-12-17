@@ -6,7 +6,11 @@
     background-attachment: fixed;
 }
 
-body > main > table > tbody > tr .notas-edit {
- padding-top: 4px;
- padding-right: 4px;
+    body > main > table > tbody > tr .notas-edit {
+        padding-top: 4px;
+        padding-right: 4px;
+    }
+
+.logo{
+    height:25%;
 }

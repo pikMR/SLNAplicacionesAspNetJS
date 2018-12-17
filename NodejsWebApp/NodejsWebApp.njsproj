@@ -40,6 +40,9 @@
     <Compile Include="serverexpress.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="srcbd\config\passport.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="srcbd\database.js">
       <SubType>Code</SubType>
     </Compile>
@@ -47,6 +50,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="srcbd\models\Note.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="srcbd\models\User.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="srcbd\routes\index.js">
@@ -63,6 +69,7 @@
     <Content Include="srcbd\public\css\main.css">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="srcbd\public\img\sofa.png" />
     <Content Include="srcbd\views\about.hbs">
       <SubType>Code</SubType>
     </Content>
@@ -81,13 +88,16 @@
     <Content Include="srcbd\views\notes\new-note.hbs">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="srcbd\views\partials\errors.hbs">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="srcbd\views\partials\messages.hbs">
       <SubType>Code</SubType>
     </Content>
     <Content Include="srcbd\views\users\signin.hbs">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="srcbd\views\users\signout.hbs">
+    <Content Include="srcbd\views\users\signup.hbs">
       <SubType>Code</SubType>
     </Content>
   </ItemGroup>
@@ -97,6 +107,7 @@
     <Folder Include="srcbd\helpers\" />
     <Folder Include="srcbd\models\" />
     <Folder Include="srcbd\public\css\" />
+    <Folder Include="srcbd\public\img\" />
     <Folder Include="srcbd\views\" />
     <Folder Include="srcbd\routes\" />
     <Folder Include="srcbd\public\" />
