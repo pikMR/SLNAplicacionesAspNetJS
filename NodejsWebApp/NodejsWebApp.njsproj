@@ -46,6 +46,9 @@
     <Compile Include="srcbd\Index.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="srcbd\models\Note.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="srcbd\routes\index.js">
       <SubType>Code</SubType>
     </Compile>
@@ -57,6 +60,9 @@
     </Compile>
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="srcbd\public\css\main.css">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="srcbd\views\about.hbs">
       <SubType>Code</SubType>
     </Content>
@@ -64,6 +70,18 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="srcbd\views\layouts\main.hbs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="srcbd\views\notes\all-notes.hbs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="srcbd\views\notes\edit-note.hbs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="srcbd\views\notes\new-note.hbs">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="srcbd\views\partials\messages.hbs">
       <SubType>Code</SubType>
     </Content>
     <Content Include="srcbd\views\users\signin.hbs">
@@ -78,10 +96,12 @@
     <Folder Include="srcbd\config\" />
     <Folder Include="srcbd\helpers\" />
     <Folder Include="srcbd\models\" />
+    <Folder Include="srcbd\public\css\" />
     <Folder Include="srcbd\views\" />
     <Folder Include="srcbd\routes\" />
     <Folder Include="srcbd\public\" />
     <Folder Include="srcbd\views\layouts\" />
+    <Folder Include="srcbd\views\notes\" />
     <Folder Include="srcbd\views\users\" />
     <Folder Include="srcbd\views\partials\" />
   </ItemGroup>

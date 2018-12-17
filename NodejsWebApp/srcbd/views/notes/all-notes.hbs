@@ -1,0 +1,48 @@
+﻿<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Intereses</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each colNotesMap}}
+        <tr>
+            <td>
+                <div class="d-flex p-2">
+                    <a href="/notes/edit/{{id}}">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <form action="/notes/delete/{{id}}?_method=DELETE" method="POST" name="formdelete">
+                        <input type="hidden" name="_method" value="DELETE" />
+                        <a href="#" onclick="document.forms.formdelete.submit()">
+                            <span style="color: Tomato;">
+                                <i class="fas fa-user-slash"></i>
+                            </span>
+                        </a>
+                    </form>
+                </div>
+                
+            </td>
+            <td>{{nombre}}</td>
+            <td>{{intereses}}</td>
+            <td>{{correo}}</td>
+            <td>{{date}}</td>
+        </tr>
+        {{else}}
+        <tr>
+            <td colspan="5">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-4">No hay Items</h1>
+                        <p class="lead">Agrega un elemento desde <a href="notes/add">Acá</a></p>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

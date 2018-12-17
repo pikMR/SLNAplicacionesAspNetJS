@@ -1,0 +1,27 @@
+﻿{{#each errors}}
+<div class="alert alert-warning alert-dismissible" role="alert">
+    <strong>Warning!</strong> {{text}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+{{/each}}
+<div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h3>Feed de Muebles</h3>
+        </div>
+        <div class="card-body">
+            <form role="form" action="/notes/new-note" method="POST">
+                <div class="form-group">
+                    <label class="control-label" for="exampleInputNombre">Nombre</label>
+                    <input type="text" name="nombre" class="form-control" placeholder="Tu Nombre" autofocus>
+                    <label class="control-label" for="exampleInputEmail">Correo</label>
+                    <input type="email" class="form-control" id="exampleInputEmail" placeholder="Escribe Correo" name="correo">
+                </div>
+                <div class="form-group">
+                    <textarea name="intereses" class="form-control" placeholder="Tus Intereses"></textarea>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
