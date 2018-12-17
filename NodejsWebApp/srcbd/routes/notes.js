@@ -19,6 +19,7 @@ router.get('/notes', async (req, res) => {
 router.put('/notes/edit-note/:id', async (req, res) => {
     const { nombre, intereses, correo } = req.body;
     await Note.findByIdAndUpdate(req.params.id, { nombre, intereses, correo });
+    req.flash('success_msg', 'Edición realizada satisfactoriamente.');
     res.redirect('/notes');
     //const _nota = await Note.findById(req.params.id);
     //res.render('notes/edit-note', { _nota });
@@ -33,7 +34,9 @@ router.get('/notes/edit/:id', async (req, res) => {
 
 router.delete('/notes/delete/:id', async (req, res) => {
     await Note.findByIdAndDelete(req.params.id);
-    res.redirect('/notes');
+    console.log("/notes/delete ->" + req.params.id + " - ");
+    req.flash('success_msg', 'Elemento eliminado satisfactoriamente.');
+    res.redirect('/notes'); //all-notes.hbs
 });
 // desde formulario 
 // hacia notes/new-note
