@@ -12,7 +12,6 @@ namespace AplicacionesAspNetJS.Pages
 
         public void OnGet()
         {
-
             try
             {
                 var instanceDS = Services.DomainService.Instance; // recibe lista de contactos
@@ -22,7 +21,6 @@ namespace AplicacionesAspNetJS.Pages
                 var jsonContacto = Services.UtilService.GenerarJSON(contactos[0]); // genera json contactoscontactos[0]
                 AnyContactos = Services.UtilService.AnyElementsJSON(jsonContacto); // comprueba los multiples contactos
                 ViewData["contactos"] = contactos;
-                Message = "Your contact page.";
             }
             catch (Exception ex)
             {

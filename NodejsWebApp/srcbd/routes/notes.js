@@ -25,9 +25,9 @@ router.put('/notes/edit-note/:id', async (req, res) => {
 });
 
 // desde formulario all-notes.hbs
-// hacia edit-note 
+// hacia edit-note
 router.get('/notes/edit/:id',isAuthenticated, async (req, res) => {
-    const _nota = await Note.findById(req.params.id); 
+    const _nota = await Note.findById(req.params.id);
     res.render('notes/edit-note', { _nota });
 });
 
@@ -40,7 +40,7 @@ router.delete('/notes/delete/:id', async (req, res) => {
     res.redirect('/notes'); //all-notes.hbs
 });
 
-// desde formulario 
+// desde formulario
 // hacia notes/new-note
 router.get('/notes/add',isAuthenticated,(req, res) => {
     res.render('notes/new-note');

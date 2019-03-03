@@ -18,7 +18,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>8ccf0b10-a2af-4fb1-a1a8-8861175d95fb</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>srcbd\Index.js</StartupFile>
+    <StartupFile>my-app-react\src\index.js</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>

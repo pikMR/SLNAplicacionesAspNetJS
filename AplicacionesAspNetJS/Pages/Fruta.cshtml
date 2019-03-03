@@ -1,0 +1,24 @@
+﻿@page
+@model FrutaModel
+
+<h2>Tienda de fruta</h2>
+
+<h3>Fruta Observer example manzanas</h3>
+
+<ul style="border:1px solid;background-color:azure;">
+    @foreach (var manzana in ViewData["manzanas"] as IEnumerable<Model.Manzana>)
+    {
+        <li>
+            <p>@manzana.ToString()</p>
+        </li>
+    }
+</ul>
+<h3>Fruta Observer example Peras</h3>
+<ul style="border:1px solid;background-color:palevioletred;">
+    @foreach (var pera in ViewData["peras"] as IEnumerable<Model.Pera>)
+    {
+        <li>
+            <p>@pera.ToString()</p>
+        </li>
+    }
+</ul>
