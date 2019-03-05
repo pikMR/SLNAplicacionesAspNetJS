@@ -49,11 +49,11 @@ namespace AplicacionesAspNetJS.Shared
             {
                 observers.Add(observer);
 
-                foreach(var item in frutas)
+                /*foreach(var item in frutas)
                 {
                     // envio de datos
                     observer.OnNext(item);
-                }
+                }*/
             }
             return new Unsubscriber<Fruta>(observers,observer);
         }

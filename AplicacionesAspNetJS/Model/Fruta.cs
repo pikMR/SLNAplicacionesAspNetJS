@@ -9,5 +9,6 @@ namespace AplicacionesAspNetJS.Model
     {
         public int ArbolId { get; set; }
         public string Color { get; set; }
+        public int ProductId {get;set;}
     }
 }
