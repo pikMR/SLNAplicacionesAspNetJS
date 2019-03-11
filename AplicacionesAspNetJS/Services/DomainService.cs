@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using AplicacionesAspNetJS.Model;
 namespace AplicacionesAspNetJS.Services
 {
     /// <summary>
@@ -48,12 +49,62 @@ namespace AplicacionesAspNetJS.Services
             // if(... == null) { ..
         }
 
-        public List<Model.Contacto> GetListaContactos()
+        public static List<Model.Contacto> GetListaContactos()
         {
             if (LISTA_CONTACTOS == null)
                 GenerarMocks();
 
             return LISTA_CONTACTOS;
+        }
+
+        public static dynamic GetListaContactosJSON()
+        {
+            return UtilService.GenerarJSON(GetListaContactos());
+        }
+
+        public static List<Model.Contacto> GetListaContactosLinq()
+        {
+            var textJSON = GetListaContactosJSON();
+            var root = (JContainer)JToken.Parse(textJSON);
+            dynamic elementosJSON = JToken.Parse(textJSON);
+
+            // Obtener lista de telefonos ContactoTelefonico
+            var _telefonos = root.Descendants().Select(x => ((JToken)x))
+       .Where(x => (x.Parent.Type == JTokenType.Object && ((JProperty)x).Name == "Telefono"))
+           .Select(t => new ContactoTelefonico { Telefono = ((JProperty)t).Value.ToString() }).ToList();
+
+            // Crear una GuiaTelefonica y Agregar Lista de ContactoTelefonico
+            
+            return new List<Model.Contacto>();
+        }
+
+        private static dynamic getListaDebug()
+        {
+            var textJSON = GetListaContactosJSON();
+            var root = (JContainer)JToken.Parse(textJSON);
+            var query = root.Descendants().Where(jt => (jt.Type == JTokenType.Object) || (jt.Type == JTokenType.Array))
+                .Select(jo =>
+                {
+                    if (jo is JObject)
+                    {
+                        if (jo.Parent != null && jo.Parent.Type == JTokenType.Array)
+                            return jo["Telefono"];
+                                    // No help needed in this section               
+                                    // populate and return a JObject for the List<JObject> result 
+                                    // next line appears for compilation purposes only--I actually want a populated JObject to be returned
+                                    return new JObject();
+                    }
+                
+                    if (jo is JArray)
+                    {
+                        var items = jo.Children<JObject>().SelectMany(o => o.Properties()).Where(p => p.Value.Type == JTokenType.String);
+                        return new JObject(items);
+                    }
+                    return null;
+                }).Where(jo => jo != null)
+                .ToList();
+
+            return query;
         }
     } 
 }

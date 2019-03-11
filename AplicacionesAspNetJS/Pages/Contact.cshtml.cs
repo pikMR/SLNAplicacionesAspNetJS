@@ -15,8 +15,10 @@ namespace AplicacionesAspNetJS.Pages
             try
             {
                 var instanceDS = Services.DomainService.Instance; // recibe lista de contactos
-                var contactos = instanceDS.GetListaContactos();
+                //var contactos = instanceDS.GetListaContactos();
+                var contactos = Services.DomainService.GetListaContactos();
                 var jsonContactos = Services.UtilService.GenerarJSON(contactos); // genera json contactos
+                var jsonLINQ = Services.DomainService.GetListaContactosLinq();
                 var AnyContactos = Services.UtilService.AnyElementsJSON(jsonContactos); // comprueba los multiples contactos
                 var jsonContacto = Services.UtilService.GenerarJSON(contactos[0]); // genera json contactoscontactos[0]
                 AnyContactos = Services.UtilService.AnyElementsJSON(jsonContacto); // comprueba los multiples contactos

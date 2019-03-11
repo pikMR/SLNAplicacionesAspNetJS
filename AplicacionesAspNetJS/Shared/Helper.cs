@@ -12,11 +12,11 @@ namespace AplicacionesAspNetJS.Shared
         {
             var eventbus = new EventBusRabbitMQ("");
 
-            eventBus.Subscribe<ProductPriceChangedIntegrationEvent,
-                               ProductPriceChangedIntegrationEventHandler>();
+            //eventbus.Subscribe<ProductPriceChangedIntegrationEvent,
+            //                   ProductPriceChangedIntegrationEventHandler>();
 
-            eventBus.Subscribe<OrderStartedIntegrationEvent,
-                               OrderStartedIntegrationEventHandler>();
+            //eventbus.Subscribe<OrderStartedIntegrationEvent,
+            //                   OrderStartedIntegrationEventHandler>();
         }
     }
 }
