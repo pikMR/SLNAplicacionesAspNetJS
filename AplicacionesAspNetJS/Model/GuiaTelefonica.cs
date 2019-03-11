@@ -7,7 +7,7 @@ namespace AplicacionesAspNetJS.Model
 {
     public class GuiaTelefonica
     {
-        List<ContactoTelefonico> Contactos { get; set; }
-        string Temporada { get; set; }
+        public List<ContactoTelefonico> Contactos { get; set; }
+        public string Temporada { get; set; }
     }
 }

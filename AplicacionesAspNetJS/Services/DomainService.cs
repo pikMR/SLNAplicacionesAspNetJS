@@ -74,6 +74,13 @@ namespace AplicacionesAspNetJS.Services
            .Select(t => new ContactoTelefonico { Telefono = ((JProperty)t).Value.ToString() }).ToList();
 
             // Crear una GuiaTelefonica y Agregar Lista de ContactoTelefonico
+            var guia = new GuiaTelefonica()
+            {
+                Contactos =
+                root.Descendants().Select(x => ((JToken)x))
+                    .Where(x => (x.Parent.Type == JTokenType.Object && ((JProperty)x).Name == "Telefono"))
+                        .Select(t => new ContactoTelefonico { Telefono = ((JProperty)t).Value.ToString() }).ToList()
+            };
             
             return new List<Model.Contacto>();
         }
